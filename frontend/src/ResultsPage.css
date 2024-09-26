@@ -1,0 +1,151 @@
+/* General container for the results page with background image */
+.results-page-container {
+    display: flex;
+    
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-image: url('/home/vignesh496/Fest/frontend/src/assets/bg.png'); /* Path to your image */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    padding: 20px;
+    color: #fff; /* Set text color to white to stand out against the background */
+  }
+  
+  /* Darken background overlay to improve text visibility */
+  .results-page-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* A translucent black overlay */
+    z-index: 1;
+  }
+  
+  /* Ensure content is above the overlay */
+  .results-page-container > * {
+    z-index: 2;
+  }
+  
+  /* Title styling with white text */
+  .results-title {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    color: #fff; /* White text to contrast the background */
+  }
+  
+  /* Score and Retake Button */
+  .results-summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  .results-score {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: #fff; /* Ensure the score is also white */
+  }
+  
+  .retake-quiz-button {
+    background-color: #2563eb;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    z-index: 2; /* Ensure the button is above the overlay */
+  }
+  
+  .retake-quiz-button:hover {
+    background-color: #1d4ed8;
+  }
+  
+  /* Individual Result Boxes */
+  .results-list {
+    width: 100%;
+    max-width: 800px;
+    z-index: 2; /* Ensure the results list is above the overlay */
+  }
+  
+  .result-box {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    background-color: rgba(243, 244, 246, 0.8); /* Slightly transparent background */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .result-box:hover {
+    background-color: rgba(224, 247, 250, 0.8); /* Light blue hover effect */
+    transform: translateY(-3px); /* Pop-up effect */
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Correct/Incorrect answer color */
+  .correct {
+    border: 2px solid #34d399;
+    background-color: rgba(236, 253, 245, 0.8); /* Light green for correct answers */
+  }
+  
+  .incorrect {
+    border: 2px solid #f87171;
+    background-color: rgba(254, 242, 242, 0.8); /* Light red for incorrect answers */
+  }
+  
+  /* Styling for result text */
+  .result-question {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: #111827;
+  }
+  
+  .result-answer {
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #111827;
+  }
+  
+  .correct-answer {
+    color: #34d399; /* Green for correct answers */
+  }
+  
+  .incorrect-answer {
+    color: #f87171; /* Red for incorrect answers */
+  }
+  
+  /* Correct answer display for incorrect questions */
+  .correct-answer {
+    color: #2563eb;
+  }
+  
+  /* Mobile responsiveness */
+  @media (max-width: 768px) {
+    .results-list {
+      padding: 15px;
+    }
+  
+    .result-box {
+      padding: 15px;
+    }
+  
+    .results-title {
+      font-size: 28px;
+    }
+  
+    .retake-quiz-button {
+      font-size: 16px;
+    }
+  }
+  
