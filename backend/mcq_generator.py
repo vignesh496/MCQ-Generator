@@ -3,7 +3,7 @@ import google.generativeai as genai
 
 def generate_mcqs(prompt, n, difficulty):
 
-    genai.configure(api_key="AIzaSyANGBP_ogrPF2I6cWYlOyM3CPLbchjtN60")
+    genai.configure(api_key="YOUR_API_KEY")
 
     generation_config = {
         "temperature": 1,
